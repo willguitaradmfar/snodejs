@@ -1,0 +1,22 @@
+{
+  "name": "TOTVSRealTime",
+  "version": "0.0.4",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=development nodemon mod_captura.js"
+  },
+  "dependencies": {
+    "mongodb": "*",
+    "socket.io": "*",
+    "cron": "*",
+    "time": "*",
+    "redis": "*",
+    "hiredis": "*",
+    "nodemon": "0.7.1"
+  },
+  "engines": {
+    "node": ">= 0.8.16",
+    "npm":  ">= 1.1.49"
+  }
+}
+
