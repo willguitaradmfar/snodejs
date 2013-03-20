@@ -8,7 +8,7 @@ Baseado em modules Stateless.
 <h3><b>Como usar ?</b></h3>
 
 npm install
-b
+</br>
 npm start
 
 <b>acesse http://localhost:3000/hello.txt</>
