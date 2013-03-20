@@ -12,7 +12,8 @@
     "time": "*",
     "redis": "*",
     "hiredis": "*",
-    "nodemon": "0.7.1"
+    "nodemon": "0.7.1",
+    "express": ""
   },
   "engines": {
     "node": ">= 0.8.16",
