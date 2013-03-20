@@ -1,9 +1,9 @@
 {
-  "name": "TOTVSRealTime",
-  "version": "0.0.4",
+  "name": "snodejs",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=development nodemon mod_captura.js"
+    "start": "NODE_ENV=development nodemon apps/root/server.js"
   },
   "dependencies": {
     "mongodb": "*",
