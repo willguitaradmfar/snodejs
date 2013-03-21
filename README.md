@@ -11,4 +11,4 @@ Baseado em modules Stateless.
 </br>
 <h3>npm start</h3>
 
-<b>acesse http://localhost:3000</b>
+<b>acesse http://localhost:8080</b>
