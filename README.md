@@ -7,9 +7,8 @@ Baseado em modules Stateless.
 
 <h3><b>Como usar ?</b></h3>
 
-npm install
+<h3>npm install</h3>
 </br>
-npm start
+<h3>npm start</h3>
 
-<b>acesse http://localhost:3000/hello.txt</>
-
+<b>acesse http://localhost:3000</b>

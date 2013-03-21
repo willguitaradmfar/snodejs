@@ -1,6 +1,6 @@
 exports.andar = function(){
-	console.log('Estou andando...');
-	return "Eu sou legal";
+	console.log('Estou andando... hha');
+	return "Eu sou legalbbbbb --- ";
 }
 
 
