@@ -11,11 +11,17 @@ app.get('/hello.txt', function(req, res){
 });
 
 app.get('/hello.json', function(req, res){	
-  var body = {nome : 'william lima', idade : 16};
+  var body = {nome : 'william lima', idade : req.query.idade};
   res.setHeader('Content-Type', 'application/json');
   res.end(JSON.stringify(body));
-  util.cadastrar();
+  util[req.query.met]();
 });
+
+app.get('/dynamic.json', function(req, res){
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify(require("./"+req.query.require)[req.query.met]()));
+});
+
 
 app.get('/hello.html', function(req, res){
   res.send('Hello World');
