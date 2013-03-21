@@ -5,7 +5,6 @@ var app = express();
 
 app.get('/hello.txt', function(req, res){	
   var body = 'Hello World';
-  res.setHeader('Content-Type', 'text/plain');
   res.setHeader('Content-Length', body.length);
   res.end(body);
   util.cadastrar();
@@ -27,7 +26,7 @@ app.get('/dynamic.json', function(req, res){
 
 
 app.get('/*', function(req, res){  
-  res.writeHead(200, {'Content-Type' : 'text-plain'});  
+  res.writeHead(200);  
   res.end(fs.readFileSync('./apps/root/webadmin'+(req.url == '/'?'/index.html':req.url)));
 });
 
