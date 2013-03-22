@@ -20,8 +20,7 @@ npm start
 Como acessar ?
 ==============
 
-* acesse http://localhost:8080
-
+* - http://localhost:8080: [Setting up LAMP](http://localhost:8080)
 
 Uso
 ===
