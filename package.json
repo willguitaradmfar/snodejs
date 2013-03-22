@@ -9,6 +9,7 @@
     "mongodb": "*",
     "socket.io": "*",
     "cron": "*",
+    "jade": "latest",
     "time": "*",
     "redis": "*",
     "hiredis": "*",
