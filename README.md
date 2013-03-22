@@ -1,14 +1,27 @@
-<h1><b>Projeto SNODEJS<b></h1>
+Projeto SNODEJS
+==========
 
 Framework para node afim de padronizar um desenvolvimento
 que possibilita a escalabilidade.
 
 Baseado em modules Stateless.
 
-<h3><b>Como usar ?</b></h3>
+Como usar ?
+===========
 
-<h3>npm install</h3>
-</br>
-<h3>npm start</h3>
+```bash
+npm install
+```
 
-<b>acesse http://localhost:8080</b>
+```bash
+npm start
+```
+
+Como acessar ?
+==============
+
+* acesse http://localhost:8080
+
+
+Desenvolvimento com padrão jade
+===============================
