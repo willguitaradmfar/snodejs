@@ -9,8 +9,13 @@ Baseado em modules Stateless.
 Como usar ?
 ===========
 
-* npm install
-* npm start
+```bash
+npm install
+```
+
+```bash
+npm start
+```
 
 Como acessar ?
 ==============
