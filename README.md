@@ -1,4 +1,3 @@
-
 Projeto SNODEJS
 ==========
 
@@ -17,3 +16,7 @@ Como acessar ?
 ==============
 
 * acesse http://localhost:8080
+
+
+Desenvolvimento com padrão jade
+===============================
