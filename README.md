@@ -12,3 +12,19 @@ Baseado em modules Stateless.
 <h3>npm start</h3>
 
 <b>acesse http://localhost:8080</b>
+
+
+Projeto SNODEJS
+==========
+
+Framework para node afim de padronizar um desenvolvimento
+que possibilita a escalabilidade.
+
+Baseado em modules Stateless.
+
+How to install
+==============
+
+* Clone this repository
+* npm install
+* npm start
