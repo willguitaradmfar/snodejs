@@ -1,35 +1,35 @@
-var express = require('express');
-var fs = require('fs');
-var util = require('./util.js');
+
+/**
+ * Module dependencies.
+ */
+
+var express = require('express')
+  , routes = require('./routes')
+  , http = require('http')
+  , path = require('path');
+
 var app = express();
 
-app.get('/hello.txt', function(req, res){	
-  var body = 'Hello World';
-  res.setHeader('Content-Length', body.length);
-  res.end(body);
-  util.cadastrar();
-   
+app.configure(function(){
+  app.set('port', process.env.PORT || 3000);
+  app.set('views', __dirname + '/webadmin/views/');
+  app.set('view engine', 'jade');
+  app.use(express.favicon());
+  app.use(express.logger('dev'));
+  app.use(express.bodyParser());
+  app.use(express.methodOverride());
+  app.use(app.router);
+  app.use(require('stylus').middleware(__dirname + '/webadmin/public/'));
+  app.use(express.static(path.join(__dirname, '/webadmin/public')));
 });
 
-
-app.get('/hello.json', function(req, res){	
-  var body = {nome : 'william lima', idade : req.query.idade};
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify(body));
-  util[req.query.met]();
+app.configure('development', function(){
+  app.use(express.errorHandler());
+    app.locals.pretty = true;
 });
 
-app.get('/dynamic.json', function(req, res){
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify(require("./"+req.query.require)[req.query.met]()));
+app.get('/', routes.index);
+
+http.createServer(app).listen(app.get('port'), function(){
+  console.log("Express server listening on port " + app.get('port'));
 });
-
-
-app.get('/*', function(req, res){  
-  res.writeHead(200);  
-  res.end(fs.readFileSync('./apps/root/webadmin'+(req.url == '/'?'/index.html':req.url)));
-});
-
-app.listen(8080);
-console.log('Listening on port 8080');
-//util.cadastrar();
