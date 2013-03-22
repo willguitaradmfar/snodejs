@@ -23,5 +23,11 @@ Como acessar ?
 * acesse http://localhost:8080
 
 
-Desenvolvimento com padrão jade
-===============================
+Uso
+===
+
+* jade
+* Bootstrap
+* express
+
+
