@@ -2,5 +2,31 @@ extends layout
 
 block content
 	div.container
-		h1 Program Name
-		p Hello World teste ss
+		h1 Create Space
+		p Crie seu espaço de desenvolvimento
+		div#navigation
+			hr
+			b Namespace 
+			br
+			input#txt-create-space(type='text')
+			button#bt-create-space Ok
+		br
+		table.table.table-striped.table-hover
+			thead
+				tr
+					th Space
+					th Description
+					th Author
+			tbody
+				tr.success
+					td MySpace
+					td My Space
+					td William
+				tr.info
+					td MySpace
+					td My Space
+					td William
+				tr.warning
+					td MySpace
+					td My Space
+					td William

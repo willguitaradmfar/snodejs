@@ -6,12 +6,17 @@
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
+  , constants = require('./constants')
+  , util = require('./util')
   , path = require('path');
 
 var app = express();
 
+util.log('local server ....');
+
+
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || constants.port);
   app.set('views', __dirname + '/webadmin/views/');
   app.set('view engine', 'jade');
   app.use(express.favicon());
@@ -23,13 +28,16 @@ app.configure(function(){
   app.use(express.static(path.join(__dirname, '/webadmin/public')));
 });
 
-app.configure('development', function(){
+/*app.configure('development', function(){
   app.use(express.errorHandler());
     app.locals.pretty = true;
-});
+});*/
 
 app.get('/', routes.index);
+app.get('/json', routes.json);
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
+  util.log("Server listening on port " + app.get('port'));
 });
+
+util.log('local server [ok]');

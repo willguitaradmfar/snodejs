@@ -1,5 +1,12 @@
-var constants = require('./constants');
-console.log('init js util');
+var 
+	constants = require('./constants');
+
+
+exports.log = function(_log){
+	console.log('______________ '+_log);
+}
+
+exports.log('load util ....');
 
 var fs = require('fs');
 exports.cadastrar = function(){
@@ -14,3 +21,5 @@ exports.cadastrar = function(){
 exports.excluir = function(){
 	console.log('exclusão de produtos '+ fs.utime );
 }
+
+exports.log('load util [ok]');
