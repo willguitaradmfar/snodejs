@@ -4,5 +4,7 @@ exports.index = function(req, res){
 
 exports.json = function(req, res){
 	res.setHeader('Content-Type', 'application/json');
-	res.end(JSON.stringify(require(req.query.require)[req.query.method](req.query,res)));
+	require(req.query.require)[req.query.method](req.query,res,function(ret) {
+		res.end(JSON.stringify(ret));
+	});
 };
