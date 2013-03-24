@@ -1,7 +1,7 @@
 var snodejs = {};
 
 $(function() {
-		('click', function() {
+		$('#bt-create-space').on('click', function() {
 		if ($('#txt-namespace').val() && $('#txt-namespace').val().length > 0) {
 			snodejs.managerApp('create_space'
 				+'&namespace='+$('#txt-namespace').val()
