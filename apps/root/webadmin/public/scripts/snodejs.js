@@ -13,7 +13,7 @@ $(function() {
 				$('#txt-description').val('');
 				$('#txt-author').val('');
 				snodejs.listApp();
-				snodejs.get('registerApp', '', undefined);
+				snodejs.get('registerSpace', '', undefined);
 			});
 		}else{
 			snodejs.msg({msg : 'Existe Campo vazio'});

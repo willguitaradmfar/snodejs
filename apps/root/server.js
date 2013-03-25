@@ -29,9 +29,9 @@ app.configure(function(){
 
 app.get('/', routes.index);
 app.get('/json', routes.json);
-app.get('/registerApp', registerApp);
+app.get('/registerSpace', registerSpace);
 
-function registerApp() {
+function registerSpace() {
   managerApp.list_spaces(undefined, undefined, function (ret) {
       for (var i = 0; i < ret.list.length; i++) {
         util.log('registrando '+ret.list[i].namespace);
