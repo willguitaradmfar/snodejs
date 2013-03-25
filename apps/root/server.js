@@ -40,7 +40,7 @@ function registerSpace() {
   });
 }
 
-registerApp();
+registerSpace();
 
 http.createServer(app).listen(app.get('port'), function(){
   util.log("Server listening on port " + app.get('port'));

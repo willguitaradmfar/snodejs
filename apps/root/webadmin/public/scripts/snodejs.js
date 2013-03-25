@@ -8,12 +8,12 @@ $(function() {
 				+'&description='+$('#txt-description').val()
 				+'&author='+$('#txt-author').val()
 				, function(res) {
+				snodejs.get('registerSpace', 'time='+new Date().getTime(), undefined);
 				snodejs.msg(res);
 				$('#txt-namespace').val('');
 				$('#txt-description').val('');
 				$('#txt-author').val('');
-				snodejs.listApp();
-				snodejs.get('registerSpace', '', undefined);
+				snodejs.listApp();				
 			});
 		}else{
 			snodejs.msg({msg : 'Existe Campo vazio'});
@@ -58,7 +58,7 @@ snodejs.get = function(url, query, fun) {
 	  url: url+'?'+query,	  
 	  type: 'GET',
 	  success: function(res){
-	    fun(res);
+	  	if(fun)fun(res);
 	  }
 	});
 };
