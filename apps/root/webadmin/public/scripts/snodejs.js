@@ -13,6 +13,7 @@ $(function() {
 				$('#txt-description').val('');
 				$('#txt-author').val('');
 				snodejs.listApp();
+				snodejs.get('registerApp', '', undefined);
 			});
 		}else{
 			snodejs.msg({msg : 'Existe Campo vazio'});
@@ -49,7 +50,7 @@ snodejs.remove_space = function(namespace) {
 };
 
 snodejs.managerApp = function(method, fun) {
-	snodejs.get('json', 'require=manager-app&method='+method, fun);
+	snodejs.get('json', 'require=manager-app&method='+method, fun);	
 };
 
 snodejs.get = function(url, query, fun) {
