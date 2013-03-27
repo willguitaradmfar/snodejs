@@ -36,8 +36,8 @@ snodejs.listApp = function() {
 					 		.append($('<td/>').html($('<a/>').attr('onclick', 'snodejs.showApp(\''+res.list[i].namespace+'/\');').text(res.list[i].namespace)))
 					 		.append($('<td/>').text(res.list[i].description))
 					 		.append($('<td/>').text(res.list[i].author))
-					 		.append($('<td/>').html($('<button class="btn btn-primary btn-info" type="button" onclick="snodejs.showUploadDiagrama(\''+res.list[i].namespace+' \');">Upload Diagrama</button>')))
-					 		.append($('<td/>').html($('<button class="btn btn-primary btn-danger" type="button" onclick="snodejs.remove_space(\''+res.list[i].namespace+' \');">Remover</button>')))
+					 		.append($('<td/>').html($('<button class="btn btn-primary btn-info" type="button" onclick="snodejs.showUploadDiagrama(\''+res.list[i].namespace+' \');">Upload Diagrama</button>'))
+					 		.append($('<span> <span/><button class="btn btn-primary btn-danger" type="button" onclick="snodejs.remove_space(\''+res.list[i].namespace+' \');">Remover</button>')))
 					);				
 			}			
 		}

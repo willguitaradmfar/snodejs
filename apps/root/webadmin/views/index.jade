@@ -2,24 +2,27 @@ extends layout
 
 block content
 	div.container
-		h1 Create Space
-		p Crie seu espaço de desenvolvimento
+		h1 Create Space	
 		div#navigation
-			hr
-			b Namespace
-			br
-			input#txt-namespace(type='text')
-			br
-			b Description
-			br
-			input#txt-description(type='text')
-			br
-			b Author
-			br
-			input#txt-author(type='text')
-			br
-			button.btn.btn-primary.btn-info#bt-create-space Ok
-			br
+			
+			form.form-horizontal
+				fieldset
+					legend Crie seu espaço de desenvolvimento
+					div.control-group				
+						label.control-label(for="txt-namespace") Namespace
+						div.controls
+							input#txt-namespace(type='text', placeholder="Namespace")
+					div.control-group
+						label.control-label(for="txt-description") Description					
+						div.controls					
+							input#txt-description(type='text', placeholder="Description")
+					div.control-group
+						label.control-label(for="txt-author") Author					
+						div.controls					
+							input#txt-author(type='text', placeholder="Author")					
+					div.control-group
+						div.controls
+							button.btn.btn-primary.btn-info#bt-create-space Ok					
 		
 		table.table.table-striped.table-hover#spaces
 			thead
@@ -28,7 +31,7 @@ block content
 					th Description
 					th Author
 					th Ação
-					th Ação
+					
 			tbody
 		
 			#myModal.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
