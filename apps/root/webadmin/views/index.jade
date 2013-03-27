@@ -20,6 +20,7 @@ block content
 			br
 			button.btn.btn-primary.btn-info#bt-create-space Ok
 			br
+		
 		table.table.table-striped.table-hover#spaces
 			thead
 				tr
@@ -27,5 +28,18 @@ block content
 					th Description
 					th Author
 					th Ação
+					th Ação
 			tbody
-				
+		
+			#myModal.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+				.modal-header
+					button.close(data-dismiss='modal', aria-hidden='true') ×
+					h3#myModalLabel Modal header
+				.modal-body
+					p Upload de Diagrama
+					#upload-content
+				.modal-footer
+					button.btn(data-dismiss='modal', aria-hidden='true') Close
+					button.btn.btn-primary#bt_upload(data-dismiss='modal', aria-hidden='true') Enviar
+
+

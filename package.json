@@ -15,10 +15,10 @@
     "hiredis": "*",
     "nodemon": "0.7.1",
     "express": "",
-    "stylus" : "*"
+    "stylus" : "*",
+    "node-syslog" : "*"
   },
-  "engines": {
-    "node": ">= 0.10.1",
+  "engines": {    
     "npm":  ">= 1.1.49"
   }
 }
