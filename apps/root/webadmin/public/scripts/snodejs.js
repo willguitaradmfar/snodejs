@@ -33,10 +33,11 @@ snodejs.listApp = function() {
 			$('#spaces tbody').html('');			
 			for (var i = 0; i < res.list.length; i++) {
 				$('#spaces tbody').append($('<tr/>')
-					 		.append($('<td/>').text(res.list[i].namespace))
+					 		.append($('<td/>').html($('<a/>').attr('onclick', 'snodejs.showApp(\''+res.list[i].namespace+'/\');').text(res.list[i].namespace)))
 					 		.append($('<td/>').text(res.list[i].description))
 					 		.append($('<td/>').text(res.list[i].author))
-					 		.append($('<td/>').html($('<button class="btn btn-primary btn-danger" type="button" onclick="snodejs.remove_space(\''+res.list[i].namespace+' \');">Remover</button>')))
+					 		.append($('<td/>').html($('<button class="btn btn-primary btn-info" type="button" onclick="snodejs.showUploadDiagrama(\''+res.list[i].namespace+' \');">Upload Diagrama</button>'))
+					 		.append($('<span> <span/><button class="btn btn-primary btn-danger" type="button" onclick="snodejs.remove_space(\''+res.list[i].namespace+' \');">Remover</button>')))
 					);				
 			}			
 		}
@@ -67,6 +68,36 @@ snodejs.msg = function(res) {
 	alert(res.msg);
 };
 
-snodejs.teste = function(res) {
-	alert(res.teste);
+snodejs.showUploadDiagrama = function(namespace) {
+	$('#myModal').modal();
+	$('#myModal #upload-content').load('http://localhost:8081/upload', function() {
+			$('#myModal #bt_upload').on('click', function() {
+				$("#myModal form").submit(function() {
+					alert('teste');					
+				});			
+		});
+	});
+	
 };
+
+snodejs.showApp =  function(URL) { 
+  var width = 600;
+  var height = 500;
+ 
+  var left = 99;
+  var top = 99;
+ 
+  window.open(URL,'janela', 'width='+width+', height='+height+', top='+top+', left='+left+', scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no, resizable=no, fullscreen=no'); 
+}
+
+$(function() {
+	jsPlumb.setRenderMode(jsPlumb.CANVAS);
+
+	jsPlumb.connect({
+		source:'node1',
+		target:'node2',
+		paintStyle:{lineWidth:15,strokeStyle:'rgb(243,230,18)'},
+		endpointStyle:{fillStyle:'rgb(243,229,0)'}
+	});
+
+});
