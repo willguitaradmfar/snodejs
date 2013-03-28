@@ -14,8 +14,7 @@
     "redis": "*",
     "hiredis": "*",
     "nodemon": "0.7.1",
-    "express": "",
-    "stylus" : "*"
+    "express": ""
   },
   "engines": {
     "node": ">= 0.10.1",
