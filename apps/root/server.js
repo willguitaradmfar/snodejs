@@ -28,6 +28,8 @@ app.configure(function(){
 
 app.get('/', routes.index);
 app.get('/apps', routes.apps);
+app.get('/manager-spaces', routes.manager_spaces);
+app.get('/manager-apps', routes.manager_apps);
 app.get('/json', routes.json);
 app.get('/registerSpace', registerSpace);
 app.post('/file-upload', managerApp.file_upload);

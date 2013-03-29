@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	div.container
+		h1 Create App	
+		div#navigation		
+			
+			form.form-horizontal(action='#')
+				fieldset
+					legend Crie sua App
+					div.control-group				
+						label.control-label(for="txt-nameapp") Name
+						div.controls
+							input#txt-nameapp(type='text', placeholder="Name")
+								
+					div.control-group
+						div.controls
+							button.btn.btn-primary.btn-info#bt-create-app Ok					
+		
+		table.table.table-striped.table-hover#apps
+			thead
+				tr
+					th app					
+					th Data de criação
+			tbody
+
+		script(src='/scripts/snodejs-apps.js')
