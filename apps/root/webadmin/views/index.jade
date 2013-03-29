@@ -39,15 +39,14 @@ block content
 					
 			tbody
 		
-			#myModal.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+			#apps.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
 				.modal-header					
 					button.close(data-dismiss='modal', aria-hidden='true') ×
 					h3#myModalLabel Título
-				.modal-body
-					p Upload de Diagrama
-					#upload-content
+				.modal-body					
+					#apps-content
 				.modal-footer
 					button.btn(data-dismiss='modal', aria-hidden='true') Close
-					button.btn.btn-primary#bt_upload(data-dismiss='modal', aria-hidden='true') Enviar
+					button.btn.btn-primary#bt_ok(data-dismiss='modal', aria-hidden='true') Ok
 
 

@@ -27,10 +27,10 @@ app.configure(function(){
 });
 
 app.get('/', routes.index);
-app.get('/upload', routes.upload);
-app.post('/file-upload', managerApp.file_upload);
+app.get('/apps', routes.apps);
 app.get('/json', routes.json);
 app.get('/registerSpace', registerSpace);
+app.post('/file-upload', managerApp.file_upload);
 
 function registerSpace() {
   managerApp.list_spaces(undefined, undefined, function (ret) {

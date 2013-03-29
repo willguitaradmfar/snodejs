@@ -40,7 +40,7 @@ snodejs.listApp = function() {
 					 		.append($('<td/>').html($('<a/>').attr('onclick', 'snodejs.showApp(\''+res.list[i].namespace+'/\');').text(res.list[i].namespace)))
 					 		.append($('<td/>').text(res.list[i].description))
 					 		.append($('<td/>').text(res.list[i].author))
-					 		.append($('<td/>').html($('<button class="btn btn-primary btn-info" type="button" onclick="snodejs.showUploadDiagrama(\''+res.list[i].namespace+' \');">Upload Diagrama</button>'))
+					 		.append($('<td/>').html($('<button class="btn btn-primary btn-info" type="button" onclick="snodejs.showUploadDiagrama(\''+res.list[i].namespace+'\');">Show Apps</button>'))
 					 		.append($('<span> <span/><button class="btn btn-primary btn-danger" type="button" onclick="snodejs.remove_space(\''+res.list[i].namespace+' \');">Remover</button>')))
 					);				
 			}			
@@ -87,16 +87,10 @@ snodejs.msg = function(res) {
 };
 
 snodejs.showUploadDiagrama = function(namespace) {
-	$("#myModal").modal('show');
-	$("#myModal").data('snodejs-namespace', namespace);
-	$("#myModal #myModalLabel").text(namespace);
-	$('#myModal #upload-content').load('http://localhost:8081/upload', function() {
-			$('#myModal #bt_upload').on('click', function() {
-				$("#myModal form").submit(function() {
-					alert('teste');
-				});			
-		});
-	});
+	$("#apps").modal('show');
+	$("#apps").data('snodejs-namespace', namespace);
+	$("#apps #myModalLabel").text('Apps do Space ['+namespace+']');
+	$('#apps #apps-content').load('http://localhost:8081/apps');
 	
 };
 
