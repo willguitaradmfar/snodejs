@@ -1,4 +1,8 @@
 var snodejs = {};
+$(function() {
+	$('.alert').hide();
+});
+
 
 $(function() {
 		$('#bt-create-space').on('click', function() {
@@ -16,7 +20,7 @@ $(function() {
 				snodejs.listApp();				
 			});
 		}else{
-			snodejs.msg({msg : 'Existe Campo vazio'});
+			snodejs.msg({msg : 'Existe Campo vazio',type : 'error'});
 		}
 	});
 
@@ -44,10 +48,12 @@ snodejs.listApp = function() {
 	});
 };
 snodejs.remove_space = function(namespace) {
-	snodejs.managerApp('remove_space&namespace='+namespace, function(res) {
-		snodejs.msg(res);
-		snodejs.listApp();
-	});	
+	if(confirm('Deseja deletar o namespace '+namespace+' ?')){
+		snodejs.managerApp('remove_space&namespace='+namespace, function(res) {
+			snodejs.msg(res);
+			snodejs.listApp();
+		});
+	}
 };
 
 snodejs.managerApp = function(method, fun) {
@@ -65,15 +71,29 @@ snodejs.get = function(url, query, fun) {
 };
 
 snodejs.msg = function(res) {
-	alert(res.msg);
+	$('.alert').hide();
+
+	if(res.type == 'success')
+		$('.alert').attr('class', 'alert alert-success');
+	if(res.type == 'error')
+		$('.alert').attr('class', 'alert alert-error');
+	if(res.type == 'info')
+		$('.alert').attr('class', 'alert alert-info');
+	if(res.type == 'warn')
+		$('.alert').attr('class', 'alert alert-block');
+
+	$('.alert .text-alert').text(res.msg);
+	$('.alert').show();
 };
 
 snodejs.showUploadDiagrama = function(namespace) {
-	$('#myModal').modal();
+	$("#myModal").modal('show');
+	$("#myModal").data('snodejs-namespace', namespace);
+	$("#myModal #myModalLabel").text(namespace);
 	$('#myModal #upload-content').load('http://localhost:8081/upload', function() {
 			$('#myModal #bt_upload').on('click', function() {
 				$("#myModal form").submit(function() {
-					alert('teste');					
+					alert('teste');
 				});			
 		});
 	});
@@ -89,15 +109,3 @@ snodejs.showApp =  function(URL) {
  
   window.open(URL,'janela', 'width='+width+', height='+height+', top='+top+', left='+left+', scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no, resizable=no, fullscreen=no'); 
 }
-
-$(function() {
-	jsPlumb.setRenderMode(jsPlumb.CANVAS);
-
-	jsPlumb.connect({
-		source:'node1',
-		target:'node2',
-		paintStyle:{lineWidth:15,strokeStyle:'rgb(243,230,18)'},
-		endpointStyle:{fillStyle:'rgb(243,229,0)'}
-	});
-
-});

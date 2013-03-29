@@ -10,7 +10,7 @@ block content
 			#container1
 				#node1
 			
-			form.form-horizontal
+			form.form-horizontal(action='#')
 				fieldset
 					legend Crie seu espaço de desenvolvimento
 					div.control-group				
@@ -40,9 +40,9 @@ block content
 			tbody
 		
 			#myModal.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
-				.modal-header
+				.modal-header					
 					button.close(data-dismiss='modal', aria-hidden='true') ×
-					h3#myModalLabel Modal header
+					h3#myModalLabel Título
 				.modal-body
 					p Upload de Diagrama
 					#upload-content

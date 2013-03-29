@@ -14,13 +14,9 @@
     "redis": "*",
     "hiredis": "*",
     "nodemon": "0.7.1",
-<<<<<<< HEAD
-    "express": ""
-=======
     "express": "",
     "stylus" : "*",
     "node-syslog" : "*"
->>>>>>> origin
   },
   "engines": {    
     "npm":  ">= 1.1.49"
