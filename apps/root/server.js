@@ -8,6 +8,7 @@ var express = require('express')
   , path = require('path');
 
 var app = express(); 
+var server = http.createServer(app);
 
 util.init('server');
 
@@ -37,25 +38,28 @@ app.post('/file-upload', managerApp.file_upload);
 function registerSpace() {
   managerApp.list_spaces(undefined, undefined, function (ret) {
       for (var i = 0; i < ret.list.length; i++) {
-        util.log('registrando ('+ret.list[i].namespace+')');
-        var index = require(ret.list[i].namespace+'/index.js');
-        util.log('chamando construtor do diagrama ('+ret.list[i].namespace+')');
-        if(index.construct){
-          index.construct({
-            register_path_get : function(path, callback) {
-              app.get('/'+ret.list[i].namespace+path, callback);          
-            },
-            register_path_post : function(path, callback) {
-              app.post('/'+ret.list[i].namespace+path, callback);
-            }});
-        }else{util.log('O Space '+ret.list[i].namespace+' não tem o metodo [construct]');}
+          util.log('registrando ('+ret.list[i].namespace+')');
+          var index = require(ret.list[i].namespace+'/index.js');
+          util.log('chamando construtor do diagrama ('+ret.list[i].namespace+')');
+          if(index.construct){
+            index.construct({
+              register_path_get : function(path, callback) {
+                app.get('/'+ret.list[i].namespace+path, callback);          
+              },
+              register_path_post : function(path, callback) {
+                app.post('/'+ret.list[i].namespace+path, callback);
+              },
+              'server' : server,
+              'path' : ret.list[i].namespace+'/'
+            });
+          }else{util.log('O Space '+ret.list[i].namespace+' não tem o metodo [construct]');}
       };
   });
 }
 
 registerSpace();
 
-http.createServer(app).listen(app.get('port'), function(){
+server.listen(app.get('port'), function(){
   util.log("Server listening on port " + app.get('port'));
   util.log('servidor SNODEJS [ok]');
 });

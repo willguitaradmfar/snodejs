@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src:local('Open Sans'),
+  local('OpenSans'),
+  url("../font/OpenSans-Regular.ttf") format('truetype'),
+  url("../font/OpenSans.woff") format('woff');
+}
+
+body {
+    padding:0;
+    margin:0;
+    background-color:white;
+    font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align:center;
+}
+
+/*Header*/
+.headtop {
+    height:40px;
+    background-color: #2c3e50;
+    padding-top: 10px;
+    padding-left: 6%;
+}
+
+.headtop a{
+    float: left;
+}
+
+/*main container*/
+#main {
+    margin-top:12px;
+    font-size: 80%;
+    width: 99%;
+    border: 1px dotted #ccc;
+    height: 500px;
+    overflow: hidden;
+    background-color:#f1f1f1;
+    position:relative;
+}
+
+/*nav*/
+#accordion{
+    width:200px !important;
+    height:100%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/*aside*/
+#properties{
+    background-color: #f1f1f1;
+    border: 1px dotted #ccc;
+    height: 560px;
+    margin-top: 12px;
+}
+
+#testBox{
+    background-color: #f1f1f1;
+    border: 1px dotted #ccc;
+    height: 294px;
+    margin-top: 10px;
+}
+
+/*Footer*/
+.foot{
+    height:20px;
+}
+
+
+
+
+
+
+/*lib config*/
+
+.otherLibraries {
+    display:inline;
+}
+
+a, a:visited {
+    text-decoration:none;
+    color:#01a3c6;
+    font-family:helvetica;
+    padding:0.3em;
+    border-radius:0.2em;
+}
+
+a:hover {
+    color:#1b911b;
+}
+
+.selected {
+	color:rgb(189,11,11) !important;
+}
+
+.window, .label {
+    background-color:white;
+    text-align:center;
+    z-index:23;
+    cursor:pointer;
+    box-shadow: 2px 2px 19px #aaa;
+    -o-box-shadow: 2px 2px 19px #aaa;
+    -webkit-box-shadow: 2px 2px 19px #aaa;
+    -moz-box-shadow: 2px 2px 19px #aaa;
+
+}
+
+.path, ._jsPlumb_endpoint { cursor:pointer; }
+
+/* z index stuff */
+
+._jsPlumb_connector { z-index:18; }
+._jsPlumb_endpoint { z-index:19; }
+._jsPlumb_overlay { z-index:23; }
+
+._jsPlumb_connector._jsPlumb_hover {
+    z-index:21 !important;
+}
+
+._jsPlumb_endpoint._jsPlumb_hover {
+    z-index:22 !important;
+}
