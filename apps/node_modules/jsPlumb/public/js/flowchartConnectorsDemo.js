@@ -28,9 +28,6 @@
 	socket.on('box-source-not-found', function(data) {
 		console.log(data);
 		
-		
-		
-
 	});
 
 	socket.on('box-target-not-found', function(data) {
