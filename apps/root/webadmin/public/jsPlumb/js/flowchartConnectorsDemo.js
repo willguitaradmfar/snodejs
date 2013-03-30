@@ -5,7 +5,7 @@
 	socket.on('test-fail', function(data) {
 		console.log(data);		
 		if(data && data.type && data.type.toLowerCase() == 'error'){
-			jsPlumb.select({source : data.boxsource, target : data.boxtarget}).setPaintStyle({strokeStyle: "red"});
+			jsPlumb.select({source : data.boxsource, target : data.boxtarget}).setPaintStyle({strokeStyle: "yellow"});
 		}else if(data && data.type && data.type.toLowerCase() == 'success'){
 			jsPlumb.select({source : data.boxsource, target : data.boxtarget}).setPaintStyle({strokeStyle: "green"});
 		}else {
@@ -45,7 +45,7 @@
 					[ "Label", {
 						location:0.1,
 						id:"label",
-						cssClass:"aLabel"
+						cssClass:"aLabel",						
 					}]
 				]
 			});
@@ -86,14 +86,14 @@
 				paintStyle:{ fillStyle:"#558822",radius:11 },
 				hoverPaintStyle:connectorHoverStyle,
 				maxConnections:-1,
-				dropOptions:{ hoverClass:"hover", activeClass:"active" },
-				
+				dropOptions:{ hoverClass:"hover", activeClass:"active" },				
 				isTarget:true,
                 overlays:[
                 	[ "Label", { location:[0.5, -0.5], label:"in", cssClass:"endpointTargetLabel" } ]
                 ]
 			},
-			init = function(connection) {				
+			init = function(connection) {	
+				console.log(connection.getOverlay("label"));			
 				connection.getOverlay("label").setLabel(connection.sourceId + " - " + connection.targetId);
 				connection.bind("editCompleted", function(o) {
 					if (typeof console != "undefined")
