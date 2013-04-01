@@ -1,7 +1,8 @@
 
 var express = require('express')
   , routes = require('routes/index.js')
-  , http = require('http')    
+  , http = require('http')
+  , Class = require('wesley').classT
   , constants = require('constants/index.js')
   , util = require('util/index.js')  
   , managerApp = require('manager-app/index.js')
@@ -15,7 +16,7 @@ util.init('server');
 util.log('servidor SNODEJS ....');
 
 app.configure(function(){
-  app.set('port', process.env.PORT || constants.port);
+  app.set('port', constants.port);  
   app.set('views', __dirname + '/webadmin/views/');
   app.set('view engine', 'jade');
   app.use(express.favicon());
